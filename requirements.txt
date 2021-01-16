@@ -1,0 +1,7 @@
+wappdriver
+psycopg2
+requests
+json
+time
+random
+datetime
