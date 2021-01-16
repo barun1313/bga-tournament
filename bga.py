@@ -66,9 +66,9 @@ for gamer in gamers:
             check_if_exists = cur.execute(
                 "select table_id from games where table_id=%s", [table_id])
 
-            # if table does not already exist in DB
+            # if table does not already exist in DB; exlude co-op games
             if cur.rowcount == 0:
-                if game_start > script_run_time and table_id > last_updated_game[0] and table["game_id"] not in ("1015", "1181", "1224"):
+                if game_start > script_run_time and table_id > last_updated_game[0] and table["game_id"] not in ("1015", "1181", "1224") and table["unranked"] == "0":
                     players = table["players"].split(',')
                     player_names = table["player_names"].split(',')
 

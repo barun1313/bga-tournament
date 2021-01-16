@@ -35,7 +35,7 @@ for gamer in gamers:
             game_time = int(table["start"])
 
             # exclude co-op games
-            if game_time > tournament_start and table["game_id"] not in ("1015", "1181", "1224"):
+            if game_time > tournament_start and table["game_id"] not in ("1015", "1181", "1224") and table["unranked"] == "0":
                 table_id = table["table_id"]
 
                 # if table exists in Dict, ignore table
